@@ -121,7 +121,7 @@ function uploadAllTransactions() {
                 let transactionsCnt = transactions.length
                 for (let step = transactionsCnt - 1; step >= 0; step--) {
                     var transaction = transactions[step]
-                    // Loop through the rows from bottom to top to find the last row with the same description
+                    // Loop through the rows from top to bottom to find the last row with the same description
                     // start from 1, since 0 is header
                     for (var i = 1; i < descriptionColumn.length; i++) {
                         Logger.log(descriptionColumn[i][0]+" "+categoryColumn[i][0])
