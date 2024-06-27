@@ -22,8 +22,8 @@ let textColumns = ["Опис", "Коментар"]
 let datetimeColumns = ["Час транзакції"]
 
 let categories = [
-    "🍽️ Кафе і ресторани", "💅 Краса і здоровʼя", "🛒 Магазини", "👕 Одяг", "💃 Відпочинок і розваги",
-    "🏠 Платежі і комісії", "🎁 Подарунки", "🚌 Проїзд", "Інше"
+  "🍽️ Кафе і ресторани", "💅 Краса і здоровʼя", "🛒 Магазини", "👕 Одяг", "💃 Відпочинок і розваги",
+  "🏠 Платежі і комісії", "🎁 Подарунки", "🚌 Проїзд", "🎗 Благодійність", "Інше"
 ]
 
 let sources = ["Mono", "Готівка"]
@@ -122,8 +122,8 @@ function uploadAllTransactions() {
                 for (let step = transactionsCnt - 1; step >= 0; step--) {
                     var transaction = transactions[step]
                     // Loop through the rows from bottom to top to find the last row with the same description
-                    // start from 2, since 0 is header and 1 is current row we searching category for
-                    for (var i = 0; i < descriptionColumn.length; i++) {
+                    // start from 1, since 0 is header
+                    for (var i = 1; i < descriptionColumn.length; i++) {
                         Logger.log(descriptionColumn[i][0]+" "+categoryColumn[i][0])
                         if (descriptionColumn[i][0] == transaction.description) {
                             transaction.category = categoryColumn[i][0];
