@@ -124,7 +124,6 @@ function uploadAllTransactions() {
                     // Loop through the rows from top to bottom to find the last row with the same description
                     // start from 1, since 0 is header
                     for (var i = 1; i < descriptionColumn.length; i++) {
-                        Logger.log(descriptionColumn[i][0]+" "+categoryColumn[i][0])
                         if (descriptionColumn[i][0] == transaction.description) {
                             transaction.category = categoryColumn[i][0];
                             Logger.log(categoryColumn[i][0])
